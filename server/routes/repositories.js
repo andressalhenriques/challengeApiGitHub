@@ -1,16 +1,23 @@
 const findRepositories = require('../controllers/findRepositories')
 
 module.exports = app => {
-  app.get('/repositories', (req, res) => {
-    res.send('Hello')
-  })
-
 
   app.post('/repositories', async (req, res) => {
-    console.log(req.body)
-    const search = req.body.name
-    const repositories = await findRepositories({search, res})
-    return repositories
+    const search = req.body.input
+    const repositories = await findRepositories({search}) 
+    res.json(repositories)
   })
 
+  app.post('/bookmarksRepositories', async (req, res) => {
+    const searchBookMarks = req.body.input
+
+  })
+
+  app.post('/createBookmarksRepositories/', async (req, res) => {
+    const createBookmarks = req.body.input
+
+    const bookmarks = Object.keys(createBookmarks).map(id => id)
+
+    res.json(bookmarks)
+  })
 }
