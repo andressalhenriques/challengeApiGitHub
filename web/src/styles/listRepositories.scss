@@ -2,8 +2,13 @@
   width: 100%;
   margin-top: 2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
+  grid-template-columns: repeat(2, 2fr);
+  grid-gap: 0.5rem;
+  gap: 2.5rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
 
   .bookmarks {
     display: flex;
@@ -50,7 +55,7 @@
     }
 
     .wrapperIcon {
-        width: 2rem;
+        width: 4rem;
     }
   }
 }

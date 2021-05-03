@@ -13,15 +13,17 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+
 }
 
 .formInput {
   padding-top: 1rem;
-  justify-content: space-between;
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-gap: 0.5rem;
+  gap: 2.5rem;
   
   input {
-    width: 64%;
     height: 3rem;
     border-radius: 0.25rem;
     border: 1px solid #d7d7d7;
@@ -41,6 +43,11 @@
     & + input {
       margin-top: 1rem;
     }
+  }
+
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
   }
 }
 

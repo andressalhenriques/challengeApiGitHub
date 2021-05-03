@@ -1,0 +1,72 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Api github Documentation",
+    "description": "Github API",
+    "host": "localhost:3001",
+    "version": "1.0.0",
+    "contact": {
+      "email": "andressalhenriques@gmail.com"
+    }
+  },
+  "paths": {
+    "/repositories": {
+      "post": {
+        "tags": ["Repositories"],
+        "summary": "Search repositories  by repository name",
+        "description": "Search repositories  by repository name",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "search": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Repository not found"
+          }
+        }
+      }
+    },
+    "/createBookmarksRepositories": {
+      "post": {
+        "tags": ["CreateBookmarksRepositories"],
+        "summary": "Create repositories bookmarks",
+        "description": "Create repositories bookmarks",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Lis of bookmarks"
+          },
+          "500": {
+            "description": "not working"
+          }
+        }
+      }
+    }
+  }
+}
