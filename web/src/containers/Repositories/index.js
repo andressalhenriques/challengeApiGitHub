@@ -1,8 +1,9 @@
 import { Button, Input } from 'antd'
 import _isEmpty from 'lodash/isEmpty'
-
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 import {
   createBookmarksRepositoriesRequest,
@@ -10,6 +11,7 @@ import {
   findRepositoriesRequest,
 } from './actions'
 import ListRepositories from './components/ListRepositories'
+import feedbackMessage from '../Feedback/Message'
 import '../../styles/repositories.scss'
 
 export class Repositories extends Component {
@@ -42,12 +44,12 @@ export class Repositories extends Component {
       if (success) {
         this.setState({ bookmarks: createBookmarksData })
       } else {
-        //throw (error)
+        feedbackMessage(error)
       }
     }
 
     if (prevFindBookmarksRepositoriesRequesting && !findBookmarksRepositoriesRequesting && !success) {
-      //throw (error)
+      feedbackMessage(error)
     }
 
 
@@ -55,7 +57,7 @@ export class Repositories extends Component {
       if (success) {
         this.setState({ search: '' })
       } else {
-        //throw (error)
+        feedbackMessage(error)
       }
     }
 
