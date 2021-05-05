@@ -4,8 +4,9 @@
 - [Documentation](#documentation)
 - [Technologies](#technologies)
 - [How to use](#howtouse)
-- 
+
 <a id="about"></a>
+<h4>ABOUT</h4>
 
 What does this application do? 
 - Search repositories by repositories name.
@@ -13,13 +14,13 @@ What does this application do?
 - Get all bookmarks repositories.
 
 <a id="documentation"></a>
-
+<h4>DOCUMENTATION</h4>
 ## :file_folder: Documentation
 
 API github documentation - server/src/swagger.json
 
 <a id="technologies"></a>
-
+<h4>TECHNOLOGIES</h4>
 ## :rocket: Technologies
 
 - [Antd](https://ant.design/)
@@ -33,6 +34,7 @@ API github documentation - server/src/swagger.json
 - [React-toastify](https://fkhadra.github.io/react-toastify/introduction/)
 
 <a id="howtouse"></a>
+<h4>HOW TO USE</h4>
 <h5>WEB</h5>
 
 ```bash
