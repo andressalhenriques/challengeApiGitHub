@@ -3,7 +3,8 @@
 - [About](#about)
 - [Documentation](#documentation)
 - [Technologies](#technologies)
-
+- [How to use](#howtouse)
+- 
 <a id="about"></a>
 
 What does this application do? 
@@ -15,14 +16,14 @@ What does this application do?
 
 ## :file_folder: Documentation
 
-API github documentation **[documentation](src/swagger.json)**
+API github documentation - server/src/swagger.json
 
 <a id="technologies"></a>
 
 ## :rocket: Technologies
 
 - [Antd](https://ant.design/)
-- [Bluebird](https://fkhadra.github.io/react-toastify/introduction/)
+- [Bluebird](https://yarnpkg.com/package/bluebird)
 - [Express](https://expressjs.com/)
 - [JavaScript](https://www.javascript.com/)
 - [Node.js](https://nodejs.org/en/)
@@ -30,4 +31,22 @@ API github documentation **[documentation](src/swagger.json)**
 - [SASS](https://sass-lang.com/documentation)
 - [Primer/octicons-react](https://github.com/primer/octicons)
 - [React-toastify](https://fkhadra.github.io/react-toastify/introduction/)
+
+<a id="howtouse"></a>
+<h5>WEB</h5>
+
+```bash
+yarn start
+```
+
+<h5>SERVER</h5>
+
+```bash
+yarn start
+```
+
+<h5>IMAGES</h5>
+
+![scren2](https://user-images.githubusercontent.com/24212720/117217625-0d24f880-add8-11eb-9f88-d8176c7f7d56.png)
+![scren](https://user-images.githubusercontent.com/24212720/117217623-0c8c6200-add8-11eb-8fae-e61a8802a7a8.png)
 
