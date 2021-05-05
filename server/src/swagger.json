@@ -21,8 +21,8 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "search": {
-                    "type": "string"
+                  "input": {
+                    "type": "object"
                   }
                 }
               }
@@ -50,8 +50,8 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "name": {
-                    "type": "string"
+                  "input": {
+                    "type": "object"
                   }
                 }
               }
@@ -60,7 +60,36 @@
         },
         "responses": {
           "200": {
-            "description": "Lis of bookmarks"
+            "description": "List of bookmarks"
+          },
+          "500": {
+            "description": "not working"
+          }
+        }
+      }
+    },
+    "/bookmarksRepositories": {
+      "post": {
+        "tags": ["Find all repositories bookmarked"],
+        "summary": "Find all repositories bookmarked",
+        "description": "Find all repositories bookmarked",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "input": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "List of bookmarks"
           },
           "500": {
             "description": "not working"

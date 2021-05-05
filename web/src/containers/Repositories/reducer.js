@@ -31,29 +31,29 @@ export default function reducer(state = initState, action) {
       error: '',
       data: {},
       }
-  case FIND_BOOKMARKS_REPOSITORIES__SUCCESS:
-      return {
-      ...state,
-      findBookmarksRepositoriesRequesting: false,
-      success: true,
-      error: '',
-      data: payload,
-      }
-  case FIND_BOOKMARKS_REPOSITORIES__ERROR:
-      return {
-      ...state,
-      findBookmarksRepositoriesRequesting: false,
-      success: false,
-      error: payload.error,
-      }
-
-      case CREATE_BOOKMARKS_REPOSITORIES_REQUESTING:
+    case FIND_BOOKMARKS_REPOSITORIES__SUCCESS:
         return {
         ...state,
-        createBookmarksRepositoriesRequesting: true,
-        success: false,
+        findBookmarksRepositoriesRequesting: false,
+        success: true,
         error: '',
-        createBookmarksData: {},
+        data: payload,
+        }
+    case FIND_BOOKMARKS_REPOSITORIES__ERROR:
+        return {
+        ...state,
+        findBookmarksRepositoriesRequesting: false,
+        success: false,
+        error: payload.error,
+        }
+
+    case CREATE_BOOKMARKS_REPOSITORIES_REQUESTING:
+      return {
+      ...state,
+      createBookmarksRepositoriesRequesting: true,
+      success: false,
+      error: '',
+      createBookmarksData: {},
         }
     case CREATE_BOOKMARKS_REPOSITORIES__SUCCESS:
         return {
@@ -70,7 +70,7 @@ export default function reducer(state = initState, action) {
         success: false,
         error: payload.error,
         }
-  
+
     case FIND_REPOSITORIES_REQUESTING:
         return {
         ...state,
