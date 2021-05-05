@@ -1,25 +1,29 @@
 
 const axios = require('axios')
+const Promise = require("bluebird");
 
 module.exports = async ({
-  search,
+  searchBookMarks,
 }) => {
-  // try {
-  //   const response = await axios.get(`https://api.github.com/search/repositories?q=${search}`)
-
-  //   return response.data.items.map((repository) => {
-  //     const repositories = {
-  //       id: repository.id,
-  //       repositoryName: repository.name,
-  //       language: repository.language,
-  //       name:repository.owner.login,
-  //       star: repository.stargazers_count,
-  //       fork: repository.forks,
-  //       url: repository.html_url,
-  //     }
-  //     return repositories
-  //   })
-  // } catch (error) {
-  //   throw error
-  // }
+  try {
+    const repo = await Promise.map(
+      searchBookMarks,
+      async (bookmark) => {
+        const response = await axios.get(`https://api.github.com/repositories/${bookmark}`)
+        const repositories = {
+          id: response.data.id,
+          repositoryName: response.data.name,
+          language: response.data.language,
+          name:response.data.owner.login,
+          star: response.data.stargazers_count,
+          fork: response.data.forks,
+          url: response.data.html_url,
+        }
+        return repositories
+      }
+    )
+      return repo
+  } catch (error) {
+    throw error
+  }
 }

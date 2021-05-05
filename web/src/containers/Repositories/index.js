@@ -63,21 +63,14 @@ export class Repositories extends Component {
 
   }
 
-  cleanData = () => {
-    this.setState({
-      bookmarksSelected: {},
-      search: '',
-    })
-  }
-
   createBookmarksRepositories = () => {
     const { bookmarksSelected } = this.state
 
     this.props.createBookmarksRepositories({ input: bookmarksSelected })
-    this.cleanData()
+    this.setState({ search: '', bookmarksSelected: {} })
   }
 
-  findBookmarksRepositories = (input) => {
+  findBookmarksRepositories = () => {
     const { bookmarks } = this.state
 
     this.props.findBookmarksRepositories({ input: bookmarks })
@@ -102,6 +95,7 @@ export class Repositories extends Component {
   render() {
     const { bookmarks, bookmarksSelected, search } = this.state
     const {
+      createBookmarksData,
       data,
     } = this.props.reducer
     return (
@@ -115,6 +109,7 @@ export class Repositories extends Component {
               onChange={(pickedValue) => this.handleInputChange(pickedValue.target.value, 'search')}
             />
           <Button
+            disabled={_isEmpty(search)}
             type='primary'
             onClick={() => { this.findRepositories(search)}}
           >
@@ -139,8 +134,8 @@ export class Repositories extends Component {
           ADD bookmarks
         </Button>    
       <div>
-        {!_isEmpty(data) && <ListRepositories
-        data={data}
+        {!_isEmpty(data || createBookmarksData) && <ListRepositories
+        data={data || createBookmarksData}
         bookmarksSelected={bookmarksSelected}
         onChange={this.handleCheckboxClicked}
         /> }

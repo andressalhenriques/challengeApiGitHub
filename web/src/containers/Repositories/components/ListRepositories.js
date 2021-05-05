@@ -1,5 +1,4 @@
-import { Button, Checkbox } from 'antd'
-import _isEmpty from 'lodash/isEmpty'
+import { Checkbox } from 'antd'
 import {GitBranchIcon, StarFillIcon } from '@primer/octicons-react'
 
 import '../../../styles/listRepositories.scss'

@@ -6,7 +6,10 @@
 
 <a id="about"></a>
 
-What does this application do? Search repositories by repositories name. Bookmarks repositories, get all bookmarkars repositories.
+What does this application do? 
+- Search repositories by repositories name.
+- Bookmarks repositories.
+- Get all bookmarks repositories.
 
 <a id="documentation"></a>
 
@@ -18,13 +21,13 @@ API github documentation **[documentation](src/swagger.json)**
 
 ## :rocket: Technologies
 
+- [Antd](https://ant.design/)
+- [Bluebird](https://fkhadra.github.io/react-toastify/introduction/)
+- [Express](https://expressjs.com/)
 - [JavaScript](https://www.javascript.com/)
 - [Node.js](https://nodejs.org/en/)
 - [ReactJS](https://reactjs.org/)
-- [Antd](https://ant.design/)
-- [Express](https://expressjs.com/)
 - [SASS](https://sass-lang.com/documentation)
 - [Primer/octicons-react](https://github.com/primer/octicons)
 - [React-toastify](https://fkhadra.github.io/react-toastify/introduction/)
-
 
